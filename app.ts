@@ -4,7 +4,7 @@ var animal = {
 
     species: "Dog",
 
-    age: 5,
+    age: calculateAge(2010),
 
     speak: function() {
 
@@ -17,5 +17,13 @@ var animal = {
 function calculateAge(birthYear) {
 
     return Date.now() - birthYear;
+
+}
+
+function totalLength(x, y) {
+
+    let total = x.length + y.length;
+
+    return total;
 
 }
