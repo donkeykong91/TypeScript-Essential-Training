@@ -1,3 +1,5 @@
+function totalLength(x: string, y:string): number
+function totalLength(x: any[], y:any[]): number
 function totalLength(x: (any[] | string), y: (string | any[])): number {
 
     let total: number = x.length + y.length;
