@@ -1,62 +1,37 @@
+enum TodoState {
+
+    New = 1,
+
+    Active,
+
+    Completed, 
+
+    Deleted
+
+}
+
 interface Todo {
 
     name: string;
 
-    completed?: boolean;
+    state: TodoState;
 
 }
 
-interface JQuery {
+var todo: Todo = {
 
-    (selector: (string| any)): HTMLElement;
+    name: 'Pick up drycleaning',
 
-    fn: any;
-
-    version: number;
+    state: TodoState.New
 
 }
 
-interface jQueryElement {
+function delete(todo: Todo) {
 
-    data(name: string): any;
+    if (todo.state != TodoState.Completed) {
 
-    data(name: string, data: any): jQueryElement;
-
-}
-
-interface jQueryElement {
-
-    todo(): Todo;
-
-    todo(todo: Todo): jQueryElement;
-
-}
-
-var todo = 
-
-    {
-        name: 'Pick up drycleaning'
-    };
-
-$.fn.todo = function (todo?: Todo): Todo {
-
-    if (todo) {
-
-        $(this).data('todo', todo);
-
-    } else {
-
-        return $(this).data('todo');
+        throw "Can't delete incomplete task!";
 
     }
 
 }
-
-var container = $('container');
-
-container.data('todo', todo);
-
-var savedTodo = container.data('todo');
-
-
-container.todo(todo);
