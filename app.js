@@ -1,6 +1,6 @@
-var todo;
-todo = { age: 41 };
-function totalLength(x, y) {
-    var total = x.length + y.length;
-    return total;
+function TodoService() {
+    this.todos = [];
 }
+TodoService.prototype.getAll = function () {
+    return this.todos;
+};
