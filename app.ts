@@ -1,11 +1,45 @@
-function TodoService() {
+class TodoService {
 
-    this.todos = [];
+    static lastId: number = 0;
+
+    constructor (private todos: Todo[]) {}
+
+    add(todo: Todo) {
+
+        var newId = TodoService.getNextId();
+
+    }
+
+    getAll() {
+
+        return this.todos;
+
+    }
+
+    static getNextId() {
+
+        return TodoService.lastId += 1;
+
+    }
 
 }
 
-TodoService.prototype.getAll = function() {
+interface Todo {
 
-    return this.todos;
+    name: string;
+
+    state: TodoState;
+
+}
+
+enum TodoState {
+
+    New = 1,
+
+    Active,
+
+    Completed, 
+
+    Deleted
 
 }
