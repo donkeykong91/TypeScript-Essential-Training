@@ -38,8 +38,91 @@ enum TodoState {
 
     Active,
 
-    Completed, 
+    Complete, 
 
     Deleted
 
 }
+
+// var todo = {
+
+//     name: "Pick up drycleaning",
+
+//     get state() {
+
+//         return this._state;
+
+//     },
+
+//     set state(newState) {
+
+//         if (newState == TodoState.Complete) {
+
+//             var canBeCompleted = 
+                
+//                 this.state == TodoState.Active ||
+
+//                 this.state == TodoState.Deleted;
+
+//             if (!canBeCompleted) {
+
+//                 throw "Todo must be Active or Deleted in order to be marked Completed";
+
+//             }
+
+//         }
+
+//         this._state = newState;
+
+//     }
+
+// }
+
+class SmartTodo {
+
+    _state: TodoState;
+
+    name: string;
+
+    get state() {
+
+        return this._state;
+
+    }
+
+    set state(newState) {
+
+        if (newState == TodoState.Complete) {
+
+            var canBeCompleted = 
+                
+                this.state == TodoState.Active ||
+
+                this.state == TodoState.Deleted;
+
+            if (!canBeCompleted) {
+
+                throw "Todo must be Active or Deleted in order to be marked Completed";
+
+            }
+
+        }
+
+        this._state = newState;
+
+    }
+
+
+    constructor(name: string) {
+
+        this.name = name;
+
+    }
+
+}
+
+var todo = new SmartTodo("Pick up drycleaning");
+
+todo.state = TodoState.Complete; 
+
+todo.state; 
