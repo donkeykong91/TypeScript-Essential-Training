@@ -157,7 +157,7 @@ class CompleteTodoStateChanger extends TodoStateChanger {
 
     canChangeState(todo: Todo): boolean {
 
-        return super.canChangeState(todo) && (
+        return !!todo && (
 
             todo.state == TodoState.Active ||
 
