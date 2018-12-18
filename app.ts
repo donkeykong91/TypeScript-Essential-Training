@@ -151,4 +151,24 @@ class TodoStateChanger {
 
 }
 
-class CompleteTodoStateChanger extends TodoStateChanger {}
+class CompleteTodoStateChanger extends TodoStateChanger {
+
+    constructor() {
+
+        super(TodoState.Complete);
+
+    }
+
+    canChangeState(todo: Todo): boolean {
+
+        return super.canChangeState(todo) && (
+
+            todo.state == TodoState.Active ||
+
+            todo.state == TodoState.Deleted
+
+        );
+
+    }
+
+}
