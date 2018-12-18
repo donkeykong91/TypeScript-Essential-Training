@@ -131,11 +131,7 @@ abstract class TodoStateChanger {
 
     constructor(private newState: TodoState){}
 
-    canChangeState(todo: Todo): boolean {
-
-        return !!todo;
-
-    }
+    abstract canChangeState(todo: Todo): boolean;
 
     changeState(todo: Todo): Todo {
 
