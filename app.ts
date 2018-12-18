@@ -127,7 +127,7 @@ todo.state = TodoState.Complete;
 
 todo.state; 
 
-class TodoStateChanger {
+abstract class TodoStateChanger {
 
     constructor(private newState: TodoState){}
 
