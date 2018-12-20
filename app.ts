@@ -129,7 +129,7 @@ todo.state;
 
 abstract class TodoStateChanger {
 
-    constructor(private newState: TodoState){}
+    constructor(protected newState: TodoState){}
 
     abstract canChangeState(todo: Todo): boolean;
 
