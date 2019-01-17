@@ -1,28 +1,28 @@
-class TodoService {
+// class TodoService {
 
-    static lastId: number = 0;
+//     static lastId: number = 0;
 
-    constructor (private todos: Todo[]) {}
+//     constructor (private todos: Todo[]) {}
 
-    add(todo: Todo) {
+//     add(todo: Todo) {
 
-        var newId = TodoService.getNextId();
+//         var newId = TodoService.getNextId();
 
-    }
+//     }
 
-    getAll() {
+//     getAll() {
 
-        return this.todos;
+//         return this.todos;
 
-    }
+//     }
 
-    static getNextId() {
+//     static getNextId() {
 
-        return TodoService.lastId += 1;
+//         return TodoService.lastId += 1;
 
-    }
+//     }
 
-}
+// }
 
 interface Todo {
 
@@ -32,17 +32,17 @@ interface Todo {
 
 }
 
-enum TodoState {
+// enum TodoState {
 
-    New = 1,
+//     New = 1,
 
-    Active,
+//     Active,
 
-    Complete, 
+//     Complete, 
 
-    Deleted
+//     Deleted
 
-}
+// }
 
 // var todo = {
 
