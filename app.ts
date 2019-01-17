@@ -24,13 +24,13 @@
 
 // }
 
-interface Todo {
+// interface Todo {
 
-    name: string;
+//     name: string;
 
-    state: TodoState;
+//     state: TodoState;
 
-}
+// }
 
 // enum TodoState {
 
@@ -78,93 +78,101 @@ interface Todo {
 
 // }
 
-class SmartTodo {
+// class SmartTodo {
 
-    _state: TodoState;
+//     _state: TodoState;
 
-    name: string;
+//     name: string;
 
-    get state() {
+//     get state() {
 
-        return this._state;
+//         return this._state;
 
-    }
+//     }
 
-    set state(newState) {
+//     set state(newState) {
 
-        if (newState == TodoState.Complete) {
+//         if (newState == TodoState.Complete) {
 
-            var canBeCompleted = 
+//             var canBeCompleted = 
                 
-                this.state == TodoState.Active ||
+//                 this.state == TodoState.Active ||
 
-                this.state == TodoState.Deleted;
+//                 this.state == TodoState.Deleted;
 
-            if (!canBeCompleted) {
+//             if (!canBeCompleted) {
 
-                throw "Todo must be Active or Deleted in order to be marked Completed";
+//                 throw "Todo must be Active or Deleted in order to be marked Completed";
 
-            }
+//             }
 
-        }
+//         }
 
-        this._state = newState;
+//         this._state = newState;
 
-    }
+//     }
 
 
-    constructor(name: string) {
+//     constructor(name: string) {
 
-        this.name = name;
+//         this.name = name;
 
-    }
+//     }
 
-}
+// }
 
-var todo = new SmartTodo("Pick up drycleaning");
+// var todo = new SmartTodo("Pick up drycleaning");
 
-todo.state = TodoState.Complete; 
+// todo.state = TodoState.Complete; 
 
-todo.state; 
+// todo.state; 
 
-abstract class TodoStateChanger {
+// abstract class TodoStateChanger {
 
-    constructor(protected newState: TodoState){}
+//     constructor(protected newState: TodoState){}
 
-    abstract canChangeState(todo: Todo): boolean;
+//     abstract canChangeState(todo: Todo): boolean;
 
-    changeState(todo: Todo): Todo {
+//     changeState(todo: Todo): Todo {
 
-        if (this.canChangeState(todo)) {
+//         if (this.canChangeState(todo)) {
 
-            todo.state = this.newState;
+//             todo.state = this.newState;
 
-        }
+//         }
 
-        return todo;
+//         return todo;
 
-    }
+//     }
 
-}
+// }
 
-class CompleteTodoStateChanger extends TodoStateChanger {
+// class CompleteTodoStateChanger extends TodoStateChanger {
 
-    constructor() {
+//     constructor() {
 
-        super(TodoState.Complete);
+//         super(TodoState.Complete);
 
-    }
+//     }
 
-    canChangeState(todo: Todo): boolean {
+//     canChangeState(todo: Todo): boolean {
 
-        return !!todo && (
+//         return !!todo && (
 
-            todo.state == TodoState.Active ||
+//             todo.state == TodoState.Active ||
 
-            todo.state == TodoState.Deleted
+//             todo.state == TodoState.Deleted
 
-        );
+//         );
 
-    }
+//     }
+
+// }
+
+function clone<T> (value: T): T {
+
+    let serialized = JSON.stringify(value);
+
+    return JSON.parse(serialized);
 
 }
