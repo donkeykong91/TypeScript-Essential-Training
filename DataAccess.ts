@@ -1,3 +1,4 @@
+import Model = require('./model');
 
 let _lastId: number = 0;
 
