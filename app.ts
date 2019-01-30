@@ -305,26 +305,26 @@
 
 // }
 
-var jQuery = {
+// var jQuery = {
 
-    version: 1.19,
+//     version: 1.19,
 
-    fn: {}
+//     fn: {}
 
-};
+// };
 
-(function defineType($) {
+// (function defineType($) {
 
-    if ( $.version < 1.15 ) {
+//     if ( $.version < 1.15 ) {
 
-        throw "Plugin requires jQuery version 1.15+"
+//         throw "Plugin requires jQuery version 1.15+"
 
-    }
+//     }
 
-    $.fn.myPlugin = function() {
+//     $.fn.myPlugin = function() {
 
-        // my plugin code
+//         // my plugin code
 
-    }
+//     }
 
-})(jQuery)
+// })(jQuery)
