@@ -1,16 +1,38 @@
-interface ITodoService {
+// interface ITodoService {
 
-    add(todo: Todo): Todo;
+//     add(todo: Todo): Todo;
 
-    delete(todoId: number): void;
+//     delete(todoId: number): void;
 
-    getAll(): Todo[];
+//     getAll(): Todo[];
 
-    getById(todoId: number): Todo;
+//     getById(todoId: number): Todo;
 
-}
+// }
 
-interface Todo {
+// interface Todo {
+
+//     id: number;
+
+//     name: string;
+
+//     state: TodoState;
+
+// }
+
+// enum TodoState {
+
+//     New = 1,
+
+//     Active,
+
+//     Complete,
+
+//     Deleted
+
+// }
+
+export interface Todo {
 
     id: number;
 
@@ -20,7 +42,7 @@ interface Todo {
 
 }
 
-enum TodoState {
+export enum TodoState {
 
     New = 1,
 
