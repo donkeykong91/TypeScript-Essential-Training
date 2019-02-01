@@ -1,7 +1,9 @@
 import Model = require('./model');
 
-let _lastId: number = 0;
+import Todo = Model.Todo;
 
+
+let _lastId: number = 0;
 
 export interface ITodoService {
 
@@ -22,7 +24,7 @@ function generateTodoId() {
 }
 
 
-class TodoService implements ITodoService{
+export class TodoService implements ITodoService{
 
     constructor(private todos: Todo[]) {}
 
