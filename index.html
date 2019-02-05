@@ -4,29 +4,79 @@
 
     <head>
 
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="widht=device-width, initial-scale=1">
+
         <title>
             
-            TypeScript Todo App
+            TypeScript Todo List
         
         </title>
 
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap">
 
+        <link rel="stylesheet" href="styles.css">
+
     </head>
 
     <body>
 
-        <div id="container" class="container">
+        <div class="container">
+
+            <div class="header clearfix">
+
+                <h1>
+
+                    TypeScript Todo List
+
+                </h1>
+
+            </div>
+
+            <div class="row">
+
+                <div class="panel panel-default clearfix">
+
+                    <div class="panel-body">
+
+                        <div class="row">
+
+                            <div class="todo-list col-md-12">
+                                <!-- todo items rendered here -->
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.22/system.js">
-        
-        </script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.12.1.min.js"></script>
 
-        <script>
+        <script type="text/javascript" src="TodoListComponent.js"></script>
+
+        <script type="text/javascript" src="TodoService.js"></script>
+
+        <script type="text/javascript" src="TodoApp.js"></script>
         
-            System.import('app');    
+        <script type="text/javascript">
+
+            new TodoApp(document, [
+
+                'Pick up drycleaning',
+
+                'clean batcave',
+
+                'save gotham'
+
+            ]);   
 
         </script>
 
